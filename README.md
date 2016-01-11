@@ -42,7 +42,18 @@ class Territory < ActiveRecord::Base
   belongs_to :parent_territory, class_name: 'Territory'
 end
 ```
+Finally we add two alias methods that are useful and necessary to deal with hierarchies:
+```ruby
+class Territory < ActiveRecord::Base
+  include HierarchicalDb #we added this
+  
+  belongs_to :parent_territory, class_name: 'Territory'
 
+  # alias methods
+  alias_method :children, :territories
+  alias_method :parent, :parent_territory
+end
+```
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake false` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

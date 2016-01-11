@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["ginzunza@rebuss.cl"]
 
   spec.summary       = ""
-  spec.description   = "it gem helps to store hierarchical data in a database"
+  spec.description   = "helps to store and deal with data inside hierarchical databases"
   spec.homepage      = "https://github.com/ginzunza/hierarchical_db"
   spec.license       = "MIT"
 
