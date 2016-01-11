@@ -35,6 +35,13 @@ class AddSortedTreeFields < ActiveRecord::Migration
   end
 end
 ```
+Next into the model you have to include Hierarchies adding the code below:
+```ruby
+class Territory < ActiveRecord::Base
+  include HierarchicalDb
+  belongs_to :parent_territory, class_name: 'Territory'
+end
+```
 
 ## Development
 
