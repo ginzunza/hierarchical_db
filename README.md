@@ -20,7 +20,21 @@ Or install it yourself as:
 
 ## Usage
 
-First at all you have add a migration into your model with attributes *lft* and *rgt*
+First at all you have to add a migration into your model with attributes **lft** and **rgt**. For example, if you have a model called **Territory** (to manage countries, cities and all the other hierarchies) with the following relationship:
+```ruby
+class Territory < ActiveRecord::Base
+  belongs_to :parent_territory, class_name: 'Territory'
+end
+```
+You have to add a migration like this:
+```ruby
+class AddSortedTreeFields < ActiveRecord::Migration
+  def change
+    add_column :territories, :lft, :integer
+    add_column :territories, :rgt, :integer
+  end
+end
+```
 
 ## Development
 
