@@ -38,7 +38,7 @@ end
 Next into the model you have to include Hierarchies adding the code below:
 ```ruby
 class Territory < ActiveRecord::Base
-  include HierarchicalDb
+  include HierarchicalDb #we added this
   belongs_to :parent_territory, class_name: 'Territory'
 end
 ```
