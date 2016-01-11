@@ -18,8 +18,6 @@ Or install it yourself as:
 
     $ gem install hierarchical_db
 
-## Usage
-
 First at all you have to add a migration into your model with attributes **lft** and **rgt**. For example, if you have a model called **Territory** (to manage countries, cities and all the other hierarchies) with the following relationship:
 ```ruby
 class Territory < ActiveRecord::Base
@@ -45,15 +43,17 @@ end
 Finally we add two alias methods that are useful and necessary to deal with hierarchies:
 ```ruby
 class Territory < ActiveRecord::Base
-  include HierarchicalDb #we added this
+  include HierarchicalDb 
   
   belongs_to :parent_territory, class_name: 'Territory'
 
   # alias methods
-  alias_method :children, :territories
-  alias_method :parent, :parent_territory
+  alias_method :children, :territories #we added this
+  alias_method :parent, :parent_territory #we added this
 end
 ```
+## Usage
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake false` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
