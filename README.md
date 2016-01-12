@@ -55,15 +55,22 @@ Continuing the example, if you have data inside your Territory model, then you h
 ```
 This command initializes your tree and fills *lft* and *rgt* attributes with corresponding information.
 ###Useful Methods
-####Methods
+#####display_tree
+This is a Class method and returns graphically and tabulated the entire tree. Example:
+```
+Territory.display_tree
+```
 #####descendants
-Returns an array with all childrens order by lft attribute
+Returns an array with all childrens order by lft attribute, example:
+```
+object.descendants_count
+```
 #####descendants_count
 If you want to know how many descendants has your model, then you can execute:
 ```
  object.descendants_count
  ```
- It will return a number of descendants.
+ It returns a number of descendants.
 
 ## Development
 
