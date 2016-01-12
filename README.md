@@ -58,7 +58,7 @@ Sort_tree initializes your tree and fills *lft* and *rgt* attributes with corres
 ###Useful Methods
 #####sort_tree
 
-```
+```ruby
 Territory.sort_tree #class.sort_tree
 ```
 #####display_tree
