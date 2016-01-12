@@ -54,7 +54,9 @@ Continuing the example, if you have data inside your Territory model, then you h
   Territory.sort_tree
 ```
 This command initializes your tree and fills *lft* and *rgt* attributes with corresponding information.
-
+###Useful Methods
+####Class Methods
+#####descendants_count
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake false` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
