@@ -28,7 +28,7 @@ You have to execute the generator with the code below:
 ```
 rails g hierarchical_db territories
 ```
-Now your model has the attributes **lft** and **rgt**.
+Now your model has the attributes *lft* and *rgt*.
 
 ```ruby
 class AddSortedTreeFields < ActiveRecord::Migration
