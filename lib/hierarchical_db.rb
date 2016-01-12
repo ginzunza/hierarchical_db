@@ -4,15 +4,12 @@ require 'active_support/concern'
 module HierarchicalDb extend ActiveSupport::Concern
 
   included do
-    before_create :insert_node if self.is_sorted?
-    after_destroy :destroy_node if self.is_sorted?
+    before_create :insert_node 
+    after_destroy :destroy_node
   end
 
   module ClassMethods
-    def saludar
-      puts "Hola"
-    end
-    
+
     def is_sorted?
       unless self.first.nil?
         !self.first.lft.nil?
@@ -60,6 +57,9 @@ module HierarchicalDb extend ActiveSupport::Concern
   end
 
   def insert_node
+    unless self.is_sorted?
+      return
+    end
     father = self.parent
     previous_right = ""
     #case it has descendants
@@ -92,6 +92,9 @@ module HierarchicalDb extend ActiveSupport::Concern
   end
 
   def destroy_node
+    unless self.is_sorted?
+      return
+    end
     childs = self.class.where("lft > ?", self.rgt)
     childs.each do |t|
       t.lft = t.lft - 2
