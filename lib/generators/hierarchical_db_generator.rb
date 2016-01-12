@@ -9,20 +9,20 @@ module HierarchicalDb
 
     namespace "hierarchical_db"
 
-    desc "Creates GemName Migrations"
+    desc "Creates HierarchicalDb Migrations"
 
     source_root File.expand_path("../templates", __FILE__)
 
     def copy_migration
-      migration_template "migration_existing.rb", "db/migrate/add_gem_name_to_#{plural_name.downcase}"
+      migration_template "migration_existing.rb", "db/migrate/hierarchical_db_to_#{plural_name.downcase}"
     end
 
       def migration_data
-  <<RUBY
+  # <<RUBY
     ## Add active column to table
     t.integer :lft
     t.integer :rgt
-  RUBY
+  # RUBY
       end
     end
   end
