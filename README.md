@@ -28,7 +28,7 @@ You have to execute the generator with the code below:
 ```
 rails g hierarchical_db territories
 ```
-Now your model has the attributes *lft* and *rgt*.
+Now your model has the attributes *lft* and *rgt* that are essential to the gem work properly.
 
 Next into the model you have to include Hierarchies adding the code below:
 ```ruby
