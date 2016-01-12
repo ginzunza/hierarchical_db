@@ -18,7 +18,7 @@ Or install it yourself as:
 
     $ gem install hierarchical_db
 
-Next you have to add a migration into your model with attributes **lft** and **rgt**. For example, if you have a model called **Territory** (to manage countries, cities and all the other hierarchies) with the following relationship:
+Next you have to add a migration into your model with attributes *lft* and *rgt*. For example, if you have a model called *Territory* (to manage countries, cities and all the other hierarchies) with the following relationship:
 ```ruby
 class Territory < ActiveRecord::Base
   belongs_to :parent_territory, class_name: 'Territory'
