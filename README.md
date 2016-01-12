@@ -66,7 +66,7 @@ Territory.display_tree
 #####descendants
 Returns an array with all childrens order by lft attribute, example:
 ```ruby
-object.descendants_count
+object.descendants
 ```
 #####descendants_count
 If you want to know how many descendants has your model, then you can execute:
