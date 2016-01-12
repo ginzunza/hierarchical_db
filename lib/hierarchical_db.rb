@@ -14,7 +14,11 @@ module HierarchicalDb extend ActiveSupport::Concern
     end
     
     def is_sorted?
-      !self.first.lft.nil?
+      unless self.first.nil?
+        !self.first.lft.nil?
+      else
+        false
+      end
     end
 
     def sort_tree
