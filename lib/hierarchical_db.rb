@@ -2,17 +2,21 @@ require "hierarchical_db/version"
 require 'active_support/concern'
 
 module HierarchicalDb extend ActiveSupport::Concern
-  @sorted = 0
+
   included do
+    before_create :insert_node if self.is_sorted?
+    after_destroy :destroy_node if self.is_sorted?
   end
 
   module ClassMethods
     def saludar
-      puts "Hola: #{self.sorted}"
-      self.sorted = 1
-      puts "Después Hola: #{self.sorted}"
+      puts "Hola"
     end
     
+    def is_sorted?
+      !self.first.lft.nil?
+    end
+
     def sort_tree
       instance_node = self.new
       root_nodes = self.where(:"#{instance_node.parent_key}" => nil).to_a
@@ -22,7 +26,6 @@ module HierarchicalDb extend ActiveSupport::Concern
         right = 2
         root_nodes.each{|n| right = n.sort_subtree(right) }
       end
-      # self.sorted = 1
     end
 
     def display_tree
