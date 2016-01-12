@@ -1,13 +1,13 @@
 require 'rails/generators/named_base'
 require 'rails/generators/active_record'
 
-module GemName
+module HierarchicalDb
   module Generators
-    class GemNameGenerator < ActiveRecord::Generators::Base
+    class HierarchicalDbGenerator < ActiveRecord::Generators::Base
 
     include Rails::Generators::ResourceHelpers
 
-    namespace "gem_name"
+    namespace "hierarchical_db"
 
     desc "Creates GemName Migrations"
 
