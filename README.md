@@ -55,8 +55,16 @@ Continuing the example, if you have data inside your Territory model, then you h
 ```
 This command initializes your tree and fills *lft* and *rgt* attributes with corresponding information.
 ###Useful Methods
-####Class Methods
+####Methods
+#####descendants
+Returns an array with all childrens order by lft attribute
 #####descendants_count
+If you want to know how many descendants has your model, then you can execute:
+```
+ object.descendants_count
+ ```
+ It will return a number of descendants.
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake false` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
