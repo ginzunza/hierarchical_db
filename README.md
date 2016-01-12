@@ -55,6 +55,11 @@ Continuing the example, if you have data inside your Territory model, then you h
 ```
 This command initializes your tree and fills *lft* and *rgt* attributes with corresponding information.
 ###Useful Methods
+#####sort_tree
+This is a Class method and is imperative to use this after load seeds or when you first enter information inside your model. For example if we continuing with territories model you should execute:
+```
+Territory.sort_tree #class.sort_tree
+```
 #####display_tree
 This is a Class method and returns graphically and tabulated the entire tree. Example:
 ```
