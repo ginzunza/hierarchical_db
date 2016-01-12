@@ -14,15 +14,15 @@ module HierarchicalDb
     source_root File.expand_path("../templates", __FILE__)
 
     def copy_migration
-      migration_template "migration_existing.rb", "db/migrate/hierarchical_db_to_#{plural_name.downcase}"
+      migration_template "migration_existing.rb", "db/migrate/hierarchical_db_#{plural_name.downcase}.rb"
     end
 
       def migration_data
-  <<RUBY
+  # <<RUBY
     ## Add active column to table
-    t.integer :lft
-    t.integer :rgt
-  RUBY
+    # t.integer :lft
+    # t.integer :rgt
+  # RUBY
       end
     end
   end

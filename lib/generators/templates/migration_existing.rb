@@ -1,7 +1,8 @@
 class HierarchicalDb<%= plural_name.camelize %> < ActiveRecord::Migration
   def self.up
-    change_table(:<%= plural_name %>) do |t|
-      <%= migration_data %>
+    change do |t|
+      add_column :<%= plural_name %>, :lft, :integer
+      add_column :<%= plural_name %>, :rgt, :integer
     end
   end
 
