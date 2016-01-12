@@ -2,13 +2,15 @@ require "hierarchical_db/version"
 require 'active_support/concern'
 
 module HierarchicalDb extend ActiveSupport::Concern
-
+  @sorted = 0
   included do
   end
 
   module ClassMethods
     def saludar
-      puts "Hola"
+      puts "Hola: #{self.sorted}"
+      self.sorted = 1
+      puts "Después Hola: #{self.sorted}"
     end
     
     def sort_tree
@@ -20,6 +22,7 @@ module HierarchicalDb extend ActiveSupport::Concern
         right = 2
         root_nodes.each{|n| right = n.sort_subtree(right) }
       end
+      # self.sorted = 1
     end
 
     def display_tree
