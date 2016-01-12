@@ -30,15 +30,7 @@ rails g hierarchical_db territories
 ```
 Now your model has the attributes *lft* and *rgt*.
 
-```ruby
-class AddSortedTreeFields < ActiveRecord::Migration
-  def change
-    add_column :territories, :lft, :integer
-    add_column :territories, :rgt, :integer
-  end
-end
-```
-Into the model you have to include Hierarchies adding the code below:
+Next into the model you have to include Hierarchies adding the code below:
 ```ruby
 class Territory < ActiveRecord::Base
   include HierarchicalDb #we added this
