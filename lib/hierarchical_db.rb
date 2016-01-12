@@ -47,6 +47,10 @@ module HierarchicalDb extend ActiveSupport::Concern
     return right + 1
   end
 
+  def all_nodes
+    self.class.where(lft: (self.lft..self.rgt)).order(:lft)
+  end
+
   def descendants
     self.class.where(lft: (self.lft + 1..self.rgt - 1)).order(:lft)
   end
@@ -102,7 +106,7 @@ module HierarchicalDb extend ActiveSupport::Concern
 
   def display_subtree
     right = []
-    self.descendants.each do |d|
+    self.all_nodes.each do |d|
       if right.length > 0
         while right.last < d.rgt do
           right.pop
