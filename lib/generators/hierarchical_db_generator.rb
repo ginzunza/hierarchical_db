@@ -18,11 +18,11 @@ module HierarchicalDb
     end
 
       def migration_data
-  # <<RUBY
+  <<RUBY
     ## Add active column to table
     t.integer :lft
     t.integer :rgt
-  # RUBY
+  RUBY
       end
     end
   end
