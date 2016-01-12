@@ -60,17 +60,17 @@ After execute this command you will able to use all useful methods below
 
 #####display_tree
 This is a Class method and returns graphically and tabulated the entire tree. Example:
-```
+```ruby
 Territory.display_tree
 ```
 #####descendants
 Returns an array with all childrens order by lft attribute, example:
-```
+```ruby
 object.descendants_count
 ```
 #####descendants_count
 If you want to know how many descendants has your model, then you can execute:
-```
+```ruby
  object.descendants_count
  ```
  It returns a number of descendants.
