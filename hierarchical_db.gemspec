@@ -5,7 +5,7 @@ require 'hierarchical_db/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "hierarchical_db"
-  spec.version       = "0.1.5"
+  spec.version       = "0.1.8"
   spec.authors       = ["Gustavo"]
   spec.email         = ["ginzunza@rebuss.cl"]
 
