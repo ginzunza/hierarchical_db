@@ -71,7 +71,7 @@ module HierarchicalDb extend ActiveSupport::Concern
         previous_right = last_brother.rgt
       #case hasn't brothers
       else
-        previous_right = father.rgt
+        previous_right = father.rgt - 1
       end
       childs = self.class.where("lft > ?", previous_right)
       childs.each do |t|
