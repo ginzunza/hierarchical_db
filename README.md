@@ -63,6 +63,11 @@ After execute this command you will able to use all useful methods below
 ###Example Model
 For all our examples we will use territories model with the data below:
 ![GitHub Logo](/img/tree.png)
+Territory model has the attributes: name, lft, rgt, id and parent_territory_id
+
+id | name | lft | rgt | parent_territory_id
+------------ | ------------- | ------------- | ------------- | ------------- 
+1 | Chile | 1| | nil
 ###Useful Methods
 
 #####display_tree
