@@ -86,10 +86,8 @@ module HierarchicalDb extend ActiveSupport::Concern
     #case it is root
     else
       last_brother = self.class.where(:rgt => self.class.maximum(:rgt))
-      unless last_brother.empty?
-        last_brother = last_brother[0]
-        previous_right = last_brother.rgt
-      end
+      last_brother = last_brother[0]
+      previous_right = last_brother.rgt
     end
     self.lft = previous_right + 1
     self.rgt = previous_right + 2
