@@ -37,7 +37,7 @@ class Territory < ActiveRecord::Base
   belongs_to :parent_territory, class_name: 'Territory'
 end
 ```
-Finally we add two alias methods that are useful and necessary to deal with hierarchies:
+Finally we add two alias methods that are useful and necessary to deal with hierarchies and his parent method:
 ```ruby
 class Territory < ActiveRecord::Base
   include HierarchicalDb 
@@ -45,6 +45,10 @@ class Territory < ActiveRecord::Base
   # alias methods
   alias_method :children, :territories #we added this
   alias_method :parent, :parent_territory #we added this
+
+  def parent_key
+    'parent_territory_id'
+  end
 end
 ```
 ## Usage
