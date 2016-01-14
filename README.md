@@ -80,6 +80,12 @@ This is a Class method and returns graphically and tabulated the entire tree. Ex
 ```ruby
 Territory.display_tree
 ```
+```
+1-Chile
+  3-Región del BíoBío
+    4-Concepción
+  2-Región Metropolitana
+```
 #####descendants
 Returns an array with all childrens order by lft attribute, example:
 ```ruby
