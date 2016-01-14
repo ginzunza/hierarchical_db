@@ -35,6 +35,7 @@ Next into the model you have to include Hierarchies adding the code below:
 class Territory < ActiveRecord::Base
   include HierarchicalDb #we added this
   belongs_to :parent_territory, class_name: 'Territory'
+  has_many :territories, class_name: 'Territory', foreign_key: 'parent_territory_id'
 end
 ```
 Finally we add two alias methods that are useful and necessary to deal with hierarchies and his parent method:
@@ -42,6 +43,7 @@ Finally we add two alias methods that are useful and necessary to deal with hier
 class Territory < ActiveRecord::Base
   include HierarchicalDb 
   belongs_to :parent_territory, class_name: 'Territory'
+  has_many :territories, class_name: 'Territory', foreign_key: 'parent_territory_id'
   # alias methods
   alias_method :children, :territories #we added this
   alias_method :parent, :parent_territory #we added this
