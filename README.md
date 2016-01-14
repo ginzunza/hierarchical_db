@@ -69,7 +69,10 @@ Territory model has the attributes: name, lft, rgt, id and parent_territory_id
 
 id | name | lft | rgt | parent_territory_id
 ------------ | ------------- | ------------- | ------------- | ------------- 
-1 | Chile | 1| | nil
+1 | Chile | 1| 8 | nil
+2 | Región Metropolitana | 6| 7 | 1
+3 | Región del BíoBío | 2| 5 | 1
+4 | Concepción | 3| 4 | 3
 ###Useful Methods
 
 #####display_tree
