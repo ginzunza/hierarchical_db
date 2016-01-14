@@ -80,6 +80,7 @@ This is a Class method and returns graphically and tabulated the entire tree. Ex
 ```ruby
 Territory.display_tree
 ```
+It returns:
 ```
 1-Chile
   3-Región del BíoBío
