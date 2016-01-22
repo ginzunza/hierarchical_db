@@ -57,12 +57,17 @@ module HierarchicalDb extend ActiveSupport::Concern
     (self.rgt - self.lft - 1)/2
   end
 
+  def childs
+    descendants.where(:lvl => self.lvl + 1)
+  end
+
   def insert_node
     unless self.class.is_sorted?
       return
     end
     father = self.parent
     previous_right = ""
+    lvl = ""
     #case it has descendants
     unless father.nil?
       last_brother = father.descendants.where(:rgt => father.descendants.maximum(:rgt))
@@ -70,9 +75,11 @@ module HierarchicalDb extend ActiveSupport::Concern
       unless last_brother.empty?
         last_brother = last_brother[0]
         previous_right = last_brother.rgt
+        lvl = last_brother.lvl
       #case hasn't brothers
       else
         previous_right = father.rgt - 1
+        lvl = father.lvl + 1 
       end
       childs = self.class.where("lft > ?", previous_right)
       childs.each do |t|
@@ -92,6 +99,7 @@ module HierarchicalDb extend ActiveSupport::Concern
     end
     self.lft = previous_right + 1
     self.rgt = previous_right + 2
+    self.lvl = lvl
   end
 
   def destroy_node
