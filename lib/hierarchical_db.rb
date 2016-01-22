@@ -25,7 +25,7 @@ module HierarchicalDb extend ActiveSupport::Concern
         root_nodes[0].sort_subtree(1)
       else
         right = 2
-        root_nodes.each{|n| right = n.sort_subtree(right) }
+        root_nodes.each{|n| right = n.sort_subtree(right, 1) }
       end
     end
 
@@ -35,11 +35,12 @@ module HierarchicalDb extend ActiveSupport::Concern
     end
   end
 
-  def sort_subtree left
+  def sort_subtree left, lvl
     right = left + 1
-    self.children.each{|child| right = child.sort_subtree(right) }
+    self.children.each{|child| right = child.sort_subtree(right, lvl + 1) }
     self.lft = left
     self.rgt = right
+    self.lvl = lvl
     self.save
     return right + 1
   end
