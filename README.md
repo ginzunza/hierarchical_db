@@ -28,7 +28,7 @@ You have to execute the generator with the code below:
 ```
 rails g hierarchical_db territories
 ```
-Now your model has the attributes *lft* and *rgt* that are essential to the gem work properly.
+Now your model has the attributes *lft*, *rgt* and *lvl* that are essential to the gem work properly.
 
 Next into the model you have to include Hierarchies adding the code below:
 ```ruby
@@ -67,12 +67,12 @@ For all our examples we will use territories model with the data below:
 ![GitHub Logo](/img/tree.png) <br>
 Territory model has the attributes: name, lft, rgt, id and parent_territory_id
 
-id | name | lft | rgt | parent_territory_id
------------- | ------------- | ------------- | ------------- | ------------- 
-1 | Chile | 1| 8 | nil
-2 | Región Metropolitana | 6| 7 | 1
-3 | Región del BíoBío | 2| 5 | 1
-4 | Concepción | 3| 4 | 3
+id | name | lft | rgt | lvl | parent_territory_id
+------------ | ------------- | ------------- | ------------- | ------------- | -------------
+1 | Chile | 1| 8 | 1 | nil
+2 | Región Metropolitana | 6| 7 | 2 | 1
+3 | Región del BíoBío | 2| 5 | 2 | 1
+4 | Concepción | 3| 4 | 3 | 3
 ###Useful Methods
 
 #####display_tree
