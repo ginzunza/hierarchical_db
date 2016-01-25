@@ -65,7 +65,7 @@ After execute this command you will able to use all useful methods below
 ###Example Model
 For all our examples we will use territories model with the data below:
 ![GitHub Logo](/img/tree.png) <br>
-Territory model has the attributes: name, lft, rgt, id and parent_territory_id
+Territory model has the attributes: name, lft, rgt, lvl, id and parent_territory_id
 
 id | name | lft | rgt | lvl | parent_territory_id
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------
