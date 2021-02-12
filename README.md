@@ -73,9 +73,10 @@ id | name | lft | rgt | lvl | parent_territory_id
 2 | Región Metropolitana | 6| 7 | 2 | 1
 3 | Región del BíoBío | 2| 5 | 2 | 1
 4 | Concepción | 3| 4 | 3 | 3
-###Useful Methods
 
-#####display_tree
+### Useful Methods
+
+##### display_tree
 This is a Class method and returns graphically and tabulated the entire tree. Example:
 ```ruby
 Territory.display_tree
@@ -87,12 +88,12 @@ It returns:
     4-Concepción
   2-Región Metropolitana
 ```
-#####descendants
+##### descendants
 Returns an array with all childrens order by lft attribute, example:
 ```ruby
 object.descendants
 ```
-#####descendants_count
+##### descendants_count
 If you want to know how many descendants has your model, then you can execute:
 ```ruby
  object.descendants_count
